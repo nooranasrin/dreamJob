@@ -22,12 +22,18 @@ enum EmploymentType {
   CONTRACT
 }
 
+type Experience {
+  start: Int!
+  end: Int!
+}
+
 type Job {
   _id: ID!
   role: String!
   company: Company!
   location: Location!
   description: String!
+  experience: Experience
   postedTime: Date
   noOfVacancy: Int
   employmentType: EmploymentType

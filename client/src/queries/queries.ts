@@ -3,15 +3,19 @@ import { gql } from '@apollo/client';
 export const JOBS = gql`
   query Jobs {
     jobs {
-      id
+      _id
       description
       employmentType
       noOfVacancy
       postedTime
       role
       tags
+      experience {
+        start
+        end
+      }
       company {
-        id
+        _id
         name
       }
       location {

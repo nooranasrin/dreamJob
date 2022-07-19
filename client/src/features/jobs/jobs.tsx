@@ -8,19 +8,24 @@ const Jobs: React.FC = (): JSX.Element => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.jobs.map((job: JobProps) => (
-    <Job
-      key={job.id}
-      role={job.role}
-      description={job.description}
-      company={job.company}
-      employmentType={job.employmentType}
-      location={job.location}
-      noOfVacancy={job.noOfVacancy}
-      postedTime={job.postedTime}
-      tags={job.tags}
-    />
-  ));
+  return (
+    <div className='w-6/12 m-auto'>
+      {data.jobs.map((job: JobProps) => (
+        <Job
+          key={job._id}
+          role={job.role}
+          description={job.description}
+          company={job.company}
+          employmentType={job.employmentType}
+          location={job.location}
+          noOfVacancy={job.noOfVacancy}
+          postedTime={job.postedTime}
+          tags={job.tags}
+          experience={job.experience}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default Jobs;
