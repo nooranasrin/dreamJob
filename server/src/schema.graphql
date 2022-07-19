@@ -1,8 +1,35 @@
 type Query {
-  example: Example
+  jobs: [Job]!
+  job(id: ID!): Job!
+  company(id: ID!): Company!
 }
 
-type Example {
-  id: ID!
+scalar Date
+
+type Company {
+  _id: ID!
   name: String!
+}
+
+type Location {
+  country: String!
+  city: String
+}
+
+enum EmploymentType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+}
+
+type Job {
+  _id: ID!
+  role: String!
+  company: Company!
+  location: Location!
+  description: String!
+  postedTime: Date
+  noOfVacancy: Int
+  employmentType: EmploymentType
+  tags: [String]
 }

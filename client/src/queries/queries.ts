@@ -1,10 +1,22 @@
 import { gql } from '@apollo/client';
 
-export const EXAMPLE = gql`
-  query Example {
-    example {
+export const JOBS = gql`
+  query Jobs {
+    jobs {
       id
-      name
+      description
+      employmentType
+      noOfVacancy
+      postedTime
+      role
+      tags
+      company {
+        id
+        name
+      }
+      location {
+        country
+      }
     }
   }
 `;
