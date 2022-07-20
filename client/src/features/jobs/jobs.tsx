@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { JOBS } from '../../queries/queries';
-import Job, { JobProps } from './job';
+import Job, { JobType } from './job';
 
 const Jobs: React.FC = (): JSX.Element => {
   const { loading, error, data } = useQuery(JOBS);
@@ -17,19 +17,8 @@ const Jobs: React.FC = (): JSX.Element => {
             Easy Apply(1002)
           </div>
         </div>
-        {data.jobs.map((job: JobProps) => (
-          <Job
-            key={job._id}
-            role={job.role}
-            description={job.description}
-            company={job.company}
-            employmentType={job.employmentType}
-            location={job.location}
-            noOfVacancy={job.noOfVacancy}
-            postedTime={job.postedTime}
-            tags={job.tags}
-            experience={job.experience}
-          />
+        {data.jobs.map((job: JobType) => (
+          <Job key={job._id} job={job as JobType} />
         ))}
       </div>
     </>

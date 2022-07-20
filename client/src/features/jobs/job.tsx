@@ -2,7 +2,7 @@ import moment from 'moment';
 import locationImg from '../../assets/location.png';
 import experienceImg from '../../assets/experience.png';
 
-export interface JobProps {
+export interface JobType {
   _id?: number;
   role: string;
   company: { name: string };
@@ -15,17 +15,22 @@ export interface JobProps {
   experience: { start: number; end: number };
 }
 
-const Job = ({
-  role,
-  company,
-  location,
-  description,
-  postedTime,
-  experience,
-  noOfVacancy,
-  employmentType,
-  tags,
-}: JobProps): JSX.Element => {
+export interface JobProps {
+  job: JobType;
+}
+
+const Job = ({ job }: JobProps): JSX.Element => {
+  const {
+    role,
+    company,
+    location,
+    description,
+    postedTime,
+    experience,
+    noOfVacancy,
+    employmentType,
+    tags,
+  } = job;
   return (
     <div className='bg-white rounded-xl w-9/12 m-auto p-4 shadow-lg mt-4'>
       <div className='font-semibold text-base text-slate-700'>{role}</div>
