@@ -25,7 +25,7 @@ const Job = ({ job }: JobProps): JSX.Element => {
 
   return (
     <div
-      className='bg-white rounded-xl w-9/12 m-auto p-4 shadow-lg mt-4'
+      className='bg-white rounded-xl w-9/12 m-auto p-4 cursor-pointer shadow-lg mt-4'
       onClick={() => navigate(`/jobs/${_id}`)}>
       <div className='font-semibold text-base text-slate-700'>{role}</div>
       <div className='font-semibold text-sm text-slate-500'>{company.name}</div>

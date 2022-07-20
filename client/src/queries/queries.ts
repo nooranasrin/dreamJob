@@ -35,6 +35,10 @@ export const JOB = gql`
         city
         country
       }
+      company {
+        _id
+        name
+      }
       noOfVacancy
       postedTime
       role
