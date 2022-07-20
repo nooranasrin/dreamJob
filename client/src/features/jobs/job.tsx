@@ -27,7 +27,7 @@ const Job = ({
   tags,
 }: JobProps): JSX.Element => {
   return (
-    <div className='bg-white w-9/12 m-auto p-4 rounded-lg shadow-lg mt-4'>
+    <div className='bg-white rounded-xl w-9/12 m-auto p-4 shadow-lg mt-4'>
       <div className='font-semibold text-base text-slate-700'>{role}</div>
       <div className='font-semibold text-sm text-slate-500'>{company.name}</div>
       <div className='flex mt-3 mb-2 text-xs text-slate-500'>

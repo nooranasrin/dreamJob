@@ -3,7 +3,11 @@
 module.exports = {
   content: ['./src/**/*.{html,tsx}', './src/*.tsx'],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        normal: '70px',
+      },
+    },
   },
   plugins: [],
 };
