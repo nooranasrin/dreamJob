@@ -4,12 +4,9 @@ export const JOBS = gql`
   query Jobs {
     jobs {
       _id
-      description
-      employmentType
-      noOfVacancy
-      postedTime
       role
-      tags
+      description
+      postedTime
       experience {
         start
         end
@@ -21,6 +18,27 @@ export const JOBS = gql`
       location {
         country
       }
+    }
+  }
+`;
+
+export const JOB = gql`
+  query Job($jobId: ID!) {
+    job(id: $jobId) {
+      description
+      employmentType
+      experience {
+        start
+        end
+      }
+      location {
+        city
+        country
+      }
+      noOfVacancy
+      postedTime
+      role
+      tags
     }
   }
 `;
