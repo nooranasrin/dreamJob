@@ -10,7 +10,6 @@ const Header: React.FC = (): JSX.Element => {
           <Link to='jobs'>JOBS</Link>
         </div>
       </div>
-      <div className='bg-blue-600 h-56 rounded-bl-normal z-0'></div>
     </div>
   );
 };
