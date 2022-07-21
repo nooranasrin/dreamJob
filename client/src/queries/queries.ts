@@ -38,6 +38,7 @@ export const JOB = gql`
       company {
         _id
         name
+        industries
       }
       noOfVacancy
       postedTime

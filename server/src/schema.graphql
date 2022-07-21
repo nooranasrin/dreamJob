@@ -9,6 +9,7 @@ scalar Date
 type Company {
   _id: ID!
   name: String!
+  industries: [String!]
 }
 
 type Location {

@@ -68,6 +68,16 @@ const JobDetails: React.FC = (): JSX.Element => {
           </div>
 
           <div>
+            <Title title='Company Industry' />
+            {job.company.industries.map((industry: string, index: number) => (
+              <button key={index} className='font-normal text-sm text-blue-500'>
+                {industry}
+                {index !== job.company.industries.length - 1 ? ' /' : ''}
+                &nbsp;
+              </button>
+            ))}
+          </div>
+          <div>
             <Title title='Department / Functional Area' />
             <button className='font-normal text-sm text-blue-500'>
               {job.department}
