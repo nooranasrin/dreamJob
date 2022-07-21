@@ -49,4 +49,5 @@ type Job {
   education: String
   nationality: String
   gender: Gender
+  department: String
 }

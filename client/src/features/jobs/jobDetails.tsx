@@ -32,6 +32,7 @@ const JobDetails: React.FC = (): JSX.Element => {
     description,
     requirements,
     tags,
+    department,
   } = data.job;
 
   return (
@@ -94,6 +95,14 @@ const JobDetails: React.FC = (): JSX.Element => {
               Requirements
             </div>
             <ListItems items={requirements} />
+          </div>
+          <div>
+            <div className='text-base text-slate-700 mb-2 mt-8'>
+              Department / Functional Area
+            </div>
+            <button className='font-normal text-sm text-blue-500'>
+              {department}
+            </button>
           </div>
           <div>
             <div className='text-base text-slate-700 mb-2 mt-8'>Keywords</div>

@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
+import logo from '../assets/dj.png';
 
 const Header: React.FC = (): JSX.Element => {
   return (
-    <div className='bg-white'>
-      <div className='flex flex-row h-14 items-center justify-between m-auto w-8/12'>
-        <div></div>
-        <div className='flex font-bold text-base text-slate-600 justify-around w-1/6 '>
-          <Link to='/'>HOME</Link>
-          <Link to='jobs'>JOBS</Link>
-        </div>
+    <div className='bg-white flex h-14 justify-between'>
+      <div className='w-48'>
+        <img src={logo} alt='' className='w-full h-14' />
+      </div>
+      <div className='flex font-bold mr-60 items-center text-base text-slate-600 justify-around w-44'>
+        <Link to='/'>HOME</Link>
+        <Link to='jobs'>JOBS</Link>
       </div>
     </div>
   );

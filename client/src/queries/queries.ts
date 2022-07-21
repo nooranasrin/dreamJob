@@ -47,6 +47,7 @@ export const JOB = gql`
       nationality
       gender
       requirements
+      department
     }
   }
 `;
