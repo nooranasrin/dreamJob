@@ -3,8 +3,10 @@ import moment from 'moment';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import {
+  JobAttribute,
   PrimaryButton,
   SecondaryButton,
+  Title,
 } from '../../components/commonComponents';
 import ListItems from '../../components/ListItems';
 import { JOB } from '../../queries/queries';
@@ -51,66 +53,48 @@ const JobDetails: React.FC = (): JSX.Element => {
         </div>
         <div className='bg-white m-auto mt-8 p-4 rounded-lg shadow-lg text-xs font-bold'>
           <div className='flex justify-between flex-wrap text-slate-500'>
-            <div className='w-60 mb-5'>
-              <div>Experience</div>
-              <div className='font-normal text-sm'>
-                {experience.start} - {experience.end} Years
-              </div>
-            </div>
-            <div className='w-60 mb-5'>
-              <div>Job Location</div>
-              <div className='font-normal text-sm'>
-                {location.city} - {location.country}
-              </div>
-            </div>
-            <div className='w-60 mb-5'>
-              <div>Education</div>
-              <div className='font-normal text-sm'>{education}</div>
-            </div>
-            <div className='w-60 mb-5'>
-              <div>Nationality</div>
-              <div className='font-normal text-sm'>{nationality}</div>
-            </div>
-            <div className='w-60 mb-5'>
-              <div>Gender</div>
-              <div className='font-normal text-sm'>{gender}</div>
-            </div>
-            <div className='w-60 mb-5'>
-              <div>Vacancy</div>
-              <div className='font-normal text-sm'>{noOfVacancy}</div>
-            </div>
+            <JobAttribute
+              attribute='Experience'
+              value={`${experience.start} - ${experience.end} Years`}
+            />
+            <JobAttribute
+              attribute='Job Location'
+              value={`${location.city} - ${location.country}`}
+            />
+            <JobAttribute attribute='Education' value={education} />
+            <JobAttribute attribute='Nationality' value={nationality} />
+            <JobAttribute attribute='Gender' value={gender} />
+            <JobAttribute attribute='Vacancy' value={noOfVacancy} />
           </div>
 
           <div>
-            <div className='text-base text-slate-700 mb-2 mt-8'>
-              Job Description
-            </div>
+            <Title title='Job Description' />
             <div className='text-sm font-normal text-slate-500 pr-16'>
               {description}
             </div>
           </div>
 
           <div>
-            <div className='text-base text-slate-700 mb-2 mt-8'>
-              Requirements
-            </div>
+            <Title title='Requirements' />
             <ListItems items={requirements} />
           </div>
+
           <div>
-            <div className='text-base text-slate-700 mb-2 mt-8'>
-              Department / Functional Area
-            </div>
+            <Title title='Department / Functional Area' />
             <button className='font-normal text-sm text-blue-500'>
               {department}
             </button>
           </div>
+
           <div>
-            <div className='text-base text-slate-700 mb-2 mt-8'>Keywords</div>
+            <Title title='Keywords' />
             {tags.map((tag: string, index: number) => (
               <SecondaryButton text={tag} key={index} styles='mr-5' />
             ))}
           </div>
+
           <hr className='mt-6 mb-10' />
+
           <PrimaryButton
             text='Easy Apply'
             styles='font-normal text-base mb-4'
