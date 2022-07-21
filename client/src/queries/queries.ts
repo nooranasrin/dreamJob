@@ -43,6 +43,10 @@ export const JOB = gql`
       postedTime
       role
       tags
+      education
+      nationality
+      gender
+      requirements
     }
   }
 `;
